@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <img class="center" src="https://princessmargaretlotto.com/app/uploads/2023/03/Vehicles-Menu-500x500-1.jpg" alt="Paris" >
+    <h1>Tesla</h1> 
+    <h2>200 HP, 400kWh 50 000$</h2>
+    <h3>This Tesla is a perfect car for anyone who loves to drive fast but also comfortable. It has everything you will need during a ride. 
+        Don't bother to buy it.</h3>
+        <hr>
+        <h2>Buy now!</h2>
+            <label for="fname">Full Name: </label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Address:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <button onclick="buy();">Buy now!</button>
+    <hr>
+    <h2>Reviews</h2>
+    <div id="div1">
+        <p id="p1">Nick Johnson: Very nice car!</p>
+        <p id="p2">Mr. Smith: Wow, nice ride!</p>
+        </div>
+
+    <hr>
+    <h2>Add your review!</h2>
+    <p>Name</p>
+    <input type="text" id="name" name="name" size="10">
+    <p><label for="review">Review</label></p>
+    <textarea id="review" name="review" rows="4" cols="50"></textarea>
+    <br>
+    <button onclick="review();">Add review!</button>
+    
+
+</body>
+
+<script>
+    function review()
+    {
+    const para = document.createElement("p");
+    let text = document.getElementById("review").value;
+    let name = document.getElementById("name").value;
+    const node = document.createTextNode(name + ":" + text);
+    para.appendChild(node);
+    
+    const element = document.getElementById("div1");
+    element.appendChild(para);
+    }
+    function buy()
+    {
+        let firstName= document.getElementById("fname").value;
+        let lastName = document.getElementById("lname").value;
+
+        window.confirm("Thank you, " + firstName + " " + lastName + " for your order!")
+    }
+    </script>
+</html>
